@@ -1,55 +1,55 @@
 #include <stdio.h>
 void menu();
-int toplama(int x,int y);
-int cikarma(int x,int y);
-int carpma(int x,int y);
-float bolme(float a,float b);
+int collection(int x,int y);
+int extraction(int x,int y);
+int impact(int x,int y);
+float divide(float a,float b);
 int x,y;
 float a,b;
 int main() {
     menu();
-    int secim;
-    printf("lutfen bir 1-4 arasi secim yapiniz:\n");
-    scanf("%d",&secim);
-    switch (secim) {
+    int choose;
+    printf("Please enter a number between 1 and 4.:\n");
+    scanf("%d",&choose);
+    switch (choose) {
         case 1:
-            printf("lutfen iki sayi giriniz:\n");
+            printf("please enter two numbers:\n");
             scanf("%d %d",&x,&y);
-            printf("SONUC:%d\n",toplama(x,y));break;
+            printf("conclusion:%d\n",collection(x,y));break;
         case 2:
-            printf("lutfen iki sayi giriniz:\n");
+            printf("please enter two numbers:\n");
             scanf("%d %d",&x,&y);
-            printf("SONUC:%d\n",cikarma(x,y));break;
+            printf("conclusion:%d\n",extraction(x,y));break;
         case 3:
-            printf("lutfen iki sayi giriniz:\n");
+            printf("please enter two numbers:\n");
             scanf("%f %f",&a,&b);
-            bolme(a,b);
+            divide(a,b);
             if (b!=0)
-                printf("SONUC:%.2f\n",bolme(a,b));break;
+                printf("conclusion:%.2f\n",divide(a,b));break;
         case 4:
-            printf("lutfen iki sayi giriniz:\n");
+            printf("please enter two numbers:\n");
             scanf("%d %d",&x,&y);
-            printf("SONUC:%d\n",carpma(x,y));break;
+            printf("conclusion:%d\n",impact(x,y));break;
         default:
             printf("ERROR");break;
     }
     return 0;
 }
 void menu() {
-    printf("1-TOPLAMA\n2-CIKARMA\n3-BOLME\n4-CARPMA\n");
+    printf("1-collection\n2-extraction\n3-divide\n4-impact\n");
 }
-int toplama(int x,int y) {
+int collection(int x,int y) {
     return x+y;
 }
-int cikarma (int x, int y) {
+int extraction (int x, int y) {
     return x-y;
 }
-float bolme (float a,float b) {
+float divide (float a,float b) {
     if (b==0) {
         printf("tanimsiz\n");
     }else
         return a/b;
 }
-int carpma (int x,int y) {
+int impact (int x,int y) {
     return x*y;
 }
